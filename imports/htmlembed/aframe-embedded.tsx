@@ -3,8 +3,10 @@ import React, { useEffect, useRef } from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { Entity } from 'aframe-react';
 import { v4 as uuidv4 } from 'uuid';
+import useTimer from './timer';
 
 export default function AframeEmbedded({ children, position }) {
+  const seconds = useTimer();
   const ref = useRef(null);
   const id = useRef(uuidv4());
 
@@ -17,8 +19,8 @@ export default function AframeEmbedded({ children, position }) {
   }, [children]);
 
   return (
-    <Entity position={position} htmlembed={{ target: `#${id.current}`, width: 1, height: 1 }}>
-      <div id={id.current} ref={ref}></div>
+    <Entity position={position} htmlembed={{ target: `#${id.current}`}}>
+      <div id={id.current} ref={ref}>{seconds}</div>
     </Entity>
   );
 }

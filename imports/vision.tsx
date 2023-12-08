@@ -9,7 +9,7 @@ import AframeEmbedded from "./htmlembed/aframe-embedded";
 import useTimer from "./htmlembed/timer";
 
 export default function Vision() {
-  const seconds = useTimer();
+  // const seconds = useTimer();
 
   return (
     <div style={{ position: 'relative', width: '100vw', height: '100vh' }}>
@@ -29,7 +29,7 @@ export default function Vision() {
           <Button colorScheme="blue" size="lg" />
         </AframeEmbedded>
         <AframeEmbedded position={{ x: 0, y: 1, z: -2 }}>
-          <div style={{ height: 50, width: 100, background: "red" }}>{seconds}</div>
+          <div style={{ height: 50, width: 100, background: "red" }}/>
         </AframeEmbedded>
         <CameraRig />
         <Entity
