@@ -7,10 +7,7 @@
     "export": "rm -rf out && next export",
     "build": "rm -rf app && next build",
     "start": "next start",
-    "dev": "next dev",
-    "mp": "node ./server/socketio-server.js",
-    "dev-easyrtc": "cross-env NODE_ENV=development node ./server/easyrtc-server.js",
-    "dev-socketio": "cross-env NODE_ENV=development node ./server/socketio-server.js"
+    "dev": "next dev"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.4.9",
@@ -27,7 +24,6 @@
     "aframe-haptics-component": "^1.6.3",
     "aframe-htmlembed-component": "^1.0.0",
     "aframe-react": "^4.4.0",
-    "aframe-thumb-controls-component": "^2.0.3",
     "atob": "^2.1.2",
     "az": "^0.2.3",
     "dom-to-image": "^2.6.0",
@@ -36,14 +32,11 @@
     "events": "^3.3.0",
     "framer-motion": "^6.2.8",
     "md5": "^2.3.0",
-    "networked-aframe": "0.11.1",
     "next": "^13.5.4",
     "next-env": "^1.1.1",
     "random-int": "^3.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-player": "^2.13.0",
-    "socket.io": "^4.7.2",
     "three": "^0.150.0",
     "uuid": "^9.0.1"
   },
