@@ -7,8 +7,11 @@ import useTimer from './timer';
 
 export default function AframeEmbedded({ children, position }) {
   const seconds = useTimer();
+  const htmlembedRef = useRef(null);
   const ref = useRef(null);
   const id = useRef(uuidv4());
+  
+  console.log("AframeEmbedded render", seconds)
 
   useEffect(() => {
     if (ref.current) {
@@ -16,11 +19,11 @@ export default function AframeEmbedded({ children, position }) {
       // @ts-ignore
       ref.current.innerHTML = ReactDOMServer.renderToString(children);
     }
-  }, [children]);
+  }, [children, seconds]);
 
   return (
-    <Entity position={position} htmlembed={{ target: `#${id.current}`}}>
-      <div id={id.current} ref={ref}>{seconds}</div>
+    <Entity position={position} ref={htmlembedRef} htmlembed={{ target: `#${id.current}` }}>
+      <div id={id.current} ref={ref}></div>
     </Entity>
   );
 }

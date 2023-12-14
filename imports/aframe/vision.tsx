@@ -5,11 +5,10 @@ import { Box, Button } from '@chakra-ui/react';
 import { Entity, Scene } from "aframe-react";
 
 import CameraRig from "./camera-rig";
-import AframeEmbedded from "./htmlembed/aframe-embedded";
-import useTimer from "./htmlembed/timer";
+import AframeEmbedded from "../htmlembed/aframe-embedded";
+import Test from "../htmlembed/test";
 
 export default function Vision() {
-  // const seconds = useTimer();
 
   return (
     <div style={{ position: 'relative', width: '100vw', height: '100vh' }}>
@@ -26,11 +25,11 @@ export default function Vision() {
         }}
       >
         <AframeEmbedded position={{ x: 0, y: 1.6, z: -2 }}>
-          <Button colorScheme="blue" size="lg" />
+          <Test />
         </AframeEmbedded>
-        <AframeEmbedded position={{ x: 0, y: 1, z: -2 }}>
+        {/* <AframeEmbedded position={{ x: 0, y: 1, z: -2 }}>
           <div style={{ height: 50, width: 100, background: "red" }}/>
-        </AframeEmbedded>
+        </AframeEmbedded> */}
         <CameraRig />
         <Entity
           light={{
